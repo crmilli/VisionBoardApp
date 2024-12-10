@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+        /* Back button styling */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: black;  /* Set the arrow color to black */
+        }
+
+        .back-btn:hover {
+            color: #555;  /* Darker shade of black on hover */
+        }
+    </style>
+<!-- Back Button Icon -->
+<button class="back-btn" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i> <!-- FontAwesome left arrow icon -->
+</button>
+<h2>Document uploaded successfully!</h2>
+<a href="{% url 'upload_file' vision_board_id=vision_board_id %}">Upload another file</a>
+<script>
+    function goBack() { window.history.back() }
+</script>
+{% endblock %}

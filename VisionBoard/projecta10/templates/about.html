@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="text-center">About</h2>
+    <p class="text-center">{{ vision_board.description }}</p>
+    <h3>Members</h3> 
+    {%if members %}
+        <ul>
+            {% for member in members %}
+                <li>{{ member.first_name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{% url 'vision_board_view' pk=vision_board.id %}">Return to board</a>
+{% endblock %}
